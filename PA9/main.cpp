@@ -1,7 +1,10 @@
 #include "SFML\Graphics.hpp"
 // warren was here
 
-//chnag3eedhui4ryhfi432uhfd
+
+//rabbit
+
+//chnag3eedhui4ryhfi432uhfd//dweifhuwheuwdwoked
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1600, 1600), "Checkers");
