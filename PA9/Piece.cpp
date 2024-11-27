@@ -1,10 +1,8 @@
 #include "Piece.h"
-
 Piece::Piece(std::string newColor, int newXCoord, int newYCoord)
 {
 	Shape.setPosition(newXCoord, newYCoord);
 	Shape.setRadius(100.f);
-
 	setColor(newColor);
 }
 
@@ -34,7 +32,9 @@ sf::CircleShape Piece::getShape()
 
 void Piece::setColor(std::string newColor)
 {
-	/*NOTE: if someone finds a better way to change the color of a piece, feel free to rewrite it*/
+	/*
+	NOTE: if someone finds a better way to change the color of a piece, feel free to rewrite it
+	*/
 	if (newColor == "red")
 	{
 		Shape.setFillColor(sf::Color::Red);
@@ -45,3 +45,14 @@ void Piece::setColor(std::string newColor)
 	}
 
 }
+
+
+
+
+// movement logic
+void Piece::movePiece(int x, int y)
+{
+
+	setPosition(x, y);
+}
+
