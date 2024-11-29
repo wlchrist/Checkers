@@ -4,7 +4,8 @@
 
 	int main()
 	{
-
+		//updated by NOAH 11/28/2024 just a version verifier feel free to overwrite if you change anything im just parinoid about pulling and old version lol
+		
 		// Variables, instantiation, etc.
 
 		// Rendering
@@ -17,8 +18,8 @@
 		
 		rect1.setFillColor(sf::Color::White);
 		rect2.setFillColor(sf::Color::Black);
-		P1.setFillColor(sf::Color::Red);
 		P1.setFillColor(sf::Color::Blue);
+		P2.setFillColor(sf::Color::Red);//changed to p2 Noah
 
 
 		// Pieces
@@ -35,10 +36,13 @@
 				
 				if ((row + col) % 2 == 1) // should skip every other row for P1
 				{
-					board[row][col] = new Piece("red", col * 200, row * 200); 
+					board[row][col] = new Piece("blue", col * 200, row * 200); 
 				}
 			}
 		}
+
+		//window.getSize().x
+		//window.getSize().y
 
 		// P2 piece placement
 		for (int row = 5; row < 8; ++row)
@@ -47,7 +51,7 @@
 			{
 				if ((row + col) % 2 == 1)
 				{
-					board[row][col] = new Piece("blue", col * 200, row * 200);
+					board[row][col] = new Piece("red", col * 200, row * 200);
 				}
 			}
 		}
@@ -71,13 +75,93 @@
 		// For example, checking if a key press has registered
 		while (window.isOpen())
 		{
+			//Blame Noah 
+			const int BOARD_SIZE = 8;
+			int mouseX = 0;
+			int mouseY = 0;
+			int selectedRow = -1;
+			int selectedCol = -1;
+			Piece* selectedPiece = nullptr;
+			//end Blame
 			sf::Event event;
+
 			while (window.pollEvent(event))
 			{
-
 				if (event.type == sf::Event::Closed)
+				{
 					window.close();
-			}
+				}
+				else if (event.type == sf::Event::MouseButtonPressed)//Blame Noah 
+				{
+					if (event.mouseButton.button == sf::Mouse::Left)//checks for left click
+					{
+						sf::Vector2i mousePosition = sf::Mouse::getPosition(window);//gets mouse postition in vector form
+
+						mouseX = mousePosition.x;//sets x mouse coord
+						mouseY = mousePosition.y;//sets y mouse coord
+
+						float tileSizeX = window.getSize().x / BOARD_SIZE;//get current tile size y
+						float tileSizeY = window.getSize().y / BOARD_SIZE;//get current tile size x
+
+						int col = mouseX / tileSizeX;// divide X click coords by curent X tile size to accurelty get array coords
+						int row = mouseY / tileSizeY;// divide Y click coords by curent Y tile size to accurelty get array coords
+
+						//commented code below needs testing once pieces can be found -Noah
+
+						//if (board[row][col] != nullptr && selectedPiece == nullptr)//"board[row][col] != nullptr" references to there being a "Piece" at the specifed coords
+						//{
+						//	selectedPiece = board[row][col];
+						//	selectedRow = row;
+						//	selectedCol = col;
+						//	std::cout << "The Piece you have selected is at: (" << selectedRow << "," << selectedCol << ")\n" << std::endl;
+
+						//}
+						//else if(board[row][col] == nullptr && selectedPiece != nullptr)//"board[row][col] == nullptr" references to there not being a "Piece" at the specifed coords
+						//{
+						//	 selectedPiece->setPosition(row * tileSizeX , col * tileSizeY);
+						//	 std::cout << "Moved selected piece to: (" << row << "," << col << ")\n" << std::endl;
+
+						//	 std::cout << "broke 120 \n";//BROKEN HERE
+
+						//	 board[0][0] = selectedPiece;
+						//	 board[selectedRow][selectedCol] = nullptr;
+
+						//
+						//	 std::cout << "broke 125 \n";
+						//	 std::cout << "broke 131 \n";
+						//	 selectedPiece = nullptr;
+						//	 selectedCol = -1;
+						//	 selectedRow = -1;
+
+
+						//}
+						//else if(selectedPiece == nullptr)
+						//{
+						//	std::cout << "no piece selected \n" << std::endl;
+						//	//std::cout << "Invalid movement Piece deselected please try again \n" << std::endl;
+						///*	std::cout << "broke 131 \n";
+						//	selectedPiece = nullptr;
+						//	selectedCol = -1;
+						//	selectedRow = -1;*/
+						//}
+						
+						//this code should be corect and funcional
+
+						if (row >= 0 && row < 8 && col >= 0 && col < 8 && board[row][col] != nullptr)//checks if point has a piece //very broken
+						{//true
+							board[row][col]->setPosition(mouseX, mouseY);
+							std::cout << "Mouse is at: (" << row << "," << col << ")\n" << std::endl;
+						}
+						else
+						{//false
+							std::cout << "Invalid click no piece at tile (" << row << "," << col << ")\n" << std::endl;
+						}
+					}
+
+				}
+			}//end Blame
+
+
 
 			window.clear();
 

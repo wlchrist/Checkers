@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <SFML/Window/Mouse.hpp>
+#include <iostream>
 
 // class for each individual game piece
 class Piece
@@ -20,5 +22,9 @@ public:
 
 	// movement logic lives here
 	void movePiece(int x, int y);
+
+
+	//Noah movment 
+	void setPositionMouse(sf::Window& window);
 };
 

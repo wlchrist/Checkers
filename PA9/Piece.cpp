@@ -1,4 +1,6 @@
 #include "Piece.h"
+
+
 Piece::Piece(std::string newColor, int newXCoord, int newYCoord)
 {
 	Shape.setPosition(newXCoord, newYCoord);
@@ -19,6 +21,7 @@ int Piece::getYCoord() const
 {
 	return Shape.getPosition().y;
 }
+
 
 void Piece::setPosition(int x, int y)
 {
