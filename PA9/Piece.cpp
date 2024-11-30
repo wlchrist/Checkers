@@ -55,7 +55,7 @@ void Piece::setColor(std::string newColor)
 // movement logic
 void Piece::movePiece(int x, int y)
 {
-
-	setPosition(x, y);
+	//setPosition(x, y);//shoudlnt move physical piece -Noah
+	Shape.setPosition(x, y);
 }
 

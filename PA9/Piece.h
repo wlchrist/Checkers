@@ -23,8 +23,5 @@ public:
 	// movement logic lives here
 	void movePiece(int x, int y);
 
-
-	//Noah movment 
-	void setPositionMouse(sf::Window& window);
 };
 

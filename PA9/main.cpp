@@ -104,9 +104,6 @@
 			const int BOARD_SIZE = 8;
 			int mouseX = 0;
 			int mouseY = 0;
-			int selectedRow = -1;
-			int selectedCol = -1;
-			Piece* selectedPiece = nullptr;
 			//end Blame
 			sf::Event event;
 
@@ -133,61 +130,47 @@
 						int row = mouseY / tileSizeY;// divide Y click coords by curent Y tile size to accurelty get array coords
 
 						//commented code below needs testing once pieces can be found -Noah
-						if (currentState == pieceSelection)
+						
+						if (currentState == pieceSelection && board[col][row] != NULL)
 						{
-
-							if (board[row][col] != nullptr)//"board[row][col] != nullptr" references to there being a "Piece" at the specifed coords
-							{
-								selectedPiece = board[row][col];
-								selectedRow = row;
-								selectedCol = col;
-								currentState = pieceMove;
-								std::cout << "The Piece you have selected is at: (" << selectedRow << "," << selectedCol << ")\n" << std::endl;
-
-							}
+							selectedPiece = board[col][row];
+							selectedCol = col;
+							selectedRow = row;
+							currentState = pieceMove;
+							std::cout << "got piece" << std::endl;
 						}
-						else if(currentState == pieceMove)
+						else if (currentState == pieceMove && board[col][row] == nullptr)
 						{
-							if (board[row][col] == nullptr && selectedPiece != nullptr)//"board[row][col] == nullptr" references to there not being a "Piece" at the specifed coords
-							{
-								selectedPiece->setPosition(col * tileSizeX, row * tileSizeY);
-
-								std::cout << "broke 120 \n";//BROKEN HERE
-
-								board[row][col] = selectedPiece;
-								board[selectedRow][selectedCol] = nullptr;
-
-
-								selectedPiece = nullptr;
-								selectedCol = -1;
-								selectedRow = -1;
-								currentState = pieceSelection;
-
-								std::cout << "Moved selected piece to: (" << row << "," << col << ")\n" << std::endl;
-							}
-
-						}
-						else
-						{
-							std::cout << "no piece selected \n" << std::endl;
-							//std::cout << "Invalid movement Piece deselected please try again \n" << std::endl;
-						/*	std::cout << "broke 131 \n";
+							selectedPiece->movePiece(col* tileSizeX, row* tileSizeY);
+							board[col][row] = selectedPiece;
+							//window.draw(selectedPiece->getShape());//dont call here call in main
 							selectedPiece = nullptr;
+							board[selectedCol][selectedRow] = nullptr;
 							selectedCol = -1;
-							selectedRow = -1;*/
+							selectedRow = -1;
+							currentState = pieceSelection;
+
+							std::cout << "moved piece" << std::endl;
 						}
+						
+
+
+
+
 						
 						//this code is funcional
 
-						//if (board[row][col] != nullptr)//checks if point has a piece
-						//{//true
-						//	board[row][col]->setPosition(mouseX, mouseY);
-						//	std::cout << "Mouse is at: (" << row << "," << col << ")\n" << std::endl;
-						//}
-						//else if (board[row][col] == nullptr)
-						//{//false
-						//	std::cout << "Invalid click no piece at tile (" << row << "," << col << ")\n" << std::endl;
-						//}
+						if (board[row][col] != nullptr)//checks if point has a piece
+						{//true
+							board[row][col]->setPosition(mouseX, mouseY);
+							std::cout << "Mouse is at: (" << col << "," << row << ")\n" << std::endl;
+						}
+						else if (board[row][col] == nullptr)
+						{//false
+							std::cout << "Invalid click no piece at tile (" << col << "," << row << ")\n" << std::endl;
+						}
+
+						
 					}
 
 				}
@@ -272,6 +255,8 @@
 				P2.setPosition(coordx, 1000);
 				window.draw(P2);
 			}
+
+
 
 			//leave commented out for now constant board deletion prevents player actions from being read -Noah
 
