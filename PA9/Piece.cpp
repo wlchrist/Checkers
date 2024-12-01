@@ -1,11 +1,11 @@
 #include "Piece.h"
 
 
-Piece::Piece(std::string newColor, int newXCoord, int newYCoord)
+Piece::Piece(sf::Color newColor, int newXCoord, int newYCoord)
 {
 	Shape.setPosition(newXCoord, newYCoord);
 	Shape.setRadius(100.f);
-	setColor(newColor);
+	Shape.setFillColor(newColor);
 }
 
 Piece::~Piece()
@@ -22,10 +22,9 @@ int Piece::getYCoord() const
 	return Shape.getPosition().y;
 }
 
-
-void Piece::setPosition(int x, int y)
+sf::Color Piece::getColor()
 {
-	Shape.setPosition(x, y);
+	return Shape.getFillColor();
 }
 
 sf::CircleShape Piece::getShape()
@@ -33,29 +32,7 @@ sf::CircleShape Piece::getShape()
 	return Shape;
 }
 
-void Piece::setColor(std::string newColor)
+void Piece::setPosition(int x, int y)
 {
-	/*
-	NOTE: if someone finds a better way to change the color of a piece, feel free to rewrite it
-	*/
-	if (newColor == "red")
-	{
-		Shape.setFillColor(sf::Color::Red);
-	}
-	else if (newColor == "blue")
-	{
-		Shape.setFillColor(sf::Color::Blue);
-	}
-
-}
-
-
-
-
-// movement logic
-void Piece::movePiece(int x, int y)
-{
-	//setPosition(x, y);//shoudlnt move physical piece -Noah
 	Shape.setPosition(x, y);
 }
-

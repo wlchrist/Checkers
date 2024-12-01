@@ -1,12 +1,22 @@
 ﻿  main.cpp
-C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\main.cpp(86,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\main.cpp(86,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\main.cpp(95,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\main.cpp(95,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\main.cpp(104,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\main.cpp(104,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\main.cpp(113,32): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\main.cpp(113,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\main.cpp(121,20): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\main.cpp(127,21): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  PA9.vcxproj -> C:\Users\warrenchristian\source\repos\wlchrist\Checkers\x64\Debug\PA9.exe
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(115,22): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(115,22): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(115,22): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(115,22): warning C4244:             T=unsigned int
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(115,22): warning C4244:         ]
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(116,22): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(116,22): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(116,22): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(116,22): warning C4244:             T=unsigned int
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(116,22): warning C4244:         ]
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(118,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(119,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(179,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(179,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(188,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(188,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(197,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(197,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(206,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(206,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  PA9.vcxproj -> \\Mac\Home\Documents\CS122\Checkers\x64\Debug\PA9.exe
