@@ -10,6 +10,8 @@ int main()
 
 	//updataed by BEN 11/30/2024 added subclasses for pawn and king pieces. Also fixed rendering pieces to the board after memory for creating pieces was allocated. 
 
+	//updated by NOAH 12/1/2024 finished piece movemnet logic attmepted to fix issue with piece rendering , added escape clause to deselect pieces.
+
 	// Variables, instantiation, etc.
 
 	// Rendering
@@ -18,6 +20,7 @@ int main()
 	sf::RectangleShape rect2(sf::Vector2f(200.f, 200.f));
 	sf::CircleShape P1(100.f);
 	sf::CircleShape P2(100.f);
+	gameState currentState = pieceSelection;
 
 
 	rect1.setFillColor(sf::Color::White);
@@ -38,7 +41,6 @@ int main()
 	{
 		for (int col = 0; col < 8; ++col)
 		{
-
 			if ((row + col) % 2 == 1) // should skip every other row for P1
 			{
 				board[row][col] = new Pawn(sf::Color::Blue, col * 200, row * 200);
@@ -58,6 +60,7 @@ int main()
 		}
 	}
 
+	//can be removed in post just tests piece loactions -Noah
 	for (int i = 0; i < 8; i++)
 	{
 		for (int j = 0; j < 8; j++)
@@ -93,15 +96,28 @@ int main()
 		const int BOARD_SIZE = 8;
 		int mouseX = 0;
 		int mouseY = 0;
+		float rad = P1.getRadius();
 		//end Blame
 		sf::Event event;
 
-
+	
+	
 		while (window.pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 			{
 				window.close();
+			}
+			else if (event.type == sf::Event::KeyPressed && currentState == pieceMove)//deselectes piece with escape
+			{
+				if (event.key.code == 36)
+				{
+					selectedCol = -1;
+					selectedRow = -1;
+					currentState = pieceSelection;
+					std::cout << "Piece deselected.\n";
+				}
+
 			}
 			else if (event.type == sf::Event::MouseButtonPressed)//Blame Noah 
 			{
@@ -118,30 +134,51 @@ int main()
 					int col = mouseX / tileSizeX;// divide X click coords by curent X tile size to accurelty get array coords
 					int row = mouseY / tileSizeY;// divide Y click coords by curent Y tile size to accurelty get array coords
 
-					////commented code below needs testing once pieces can be found -Noah
+					float colAC = static_cast<float>(col);//1
+					float rowAC = static_cast<float>(row);//2
+					
+					float centerX = colAC * tileSizeX + (tileSizeX - rad) / 2;//3
+					float centerY = rowAC * tileSizeY + (tileSizeY - rad) / 2;//4
+					//1-4 are attempts to constrain piece placment for more accurate visuals
+					
+					if (currentState == pieceSelection && board[row][col] != NULL)
+					{
+						selectedPiece = board[row][col];
+						selectedCol = col;
+						selectedRow = row;
+						currentState = pieceMove;
+						std::cout << "Selected picece at: (" << col << "," << row << ")\n" << std::endl;
+					}
+					else if (currentState == pieceMove && board[row][col] == nullptr)
+					{
+						int rowDiff = abs(row - selectedRow);
+						int colDiff = abs(col - selectedCol);
 
-					//if (currentState == pieceSelection && board[col][row] != NULL)
-					//{
-					//	selectedPiece = board[col][row];
-					//	selectedCol = col;
-					//	selectedRow = row;
-					//	currentState = pieceMove;
-					//	std::cout << "got piece" << std::endl;
-					//}
-					//else if (currentState == pieceMove && board[col][row] == nullptr)
-					//{
-					//	selectedPiece->movePiece(col * tileSizeX, row * tileSizeY);
-					//	board[col][row] = selectedPiece;
-					//	//window.draw(selectedPiece->getShape());//dont call here call in main
-					//	selectedPiece = nullptr;
-					//	board[selectedCol][selectedRow] = nullptr;
-					//	selectedCol = -1;
-					//	selectedRow = -1;
-					//	currentState = pieceSelection;
+						if (rowDiff == 1 && colDiff == 1)
+						{
+							//piece movment
+							selectedPiece->setPosition(centerX, centerY);//controls visual repersentation
+							board[row][col] = selectedPiece;
+							board[selectedRow][selectedCol] = nullptr;
 
-					//	std::cout << "moved piece" << std::endl;
-					//}
 
+							//state reset
+							selectedPiece = nullptr;
+							selectedCol = -1;
+							selectedRow = -1;
+							currentState = pieceSelection;
+
+							std::cout << "moved piece to: (" << col << "," << row << ")\n" << std::endl;
+						}
+						else
+						{
+							std::cout << "Invalid move! Diagonal moves only.\n";
+						}
+					}
+					else if (currentState == pieceMove && board[row][col] != nullptr)
+					{
+						std::cout << "Cannot move here; tile (" << col << "," << row << ") is occupied.\n";
+					}
 
 
 
@@ -149,15 +186,14 @@ int main()
 
 					//this code is funcional
 
-					if (board[row][col] != nullptr)//checks if point has a piece
-					{//true
-						board[row][col]->setPosition(mouseX, mouseY);
-						std::cout << "Mouse is at: (" << col << "," << row << ")\n" << std::endl;
-					}
-					else if (board[row][col] == nullptr)
-					{//false
-						std::cout << "Invalid click no piece at tile (" << col << "," << row << ")\n" << std::endl;
-					}
+					//if (board[row][col] != nullptr)//checks if point has a piece
+					//{//true
+					//	std::cout << "Mouse is at: (" << col << "," << row << ")\n" << std::endl;
+					//}
+					//else if (board[row][col] == nullptr)
+					//{//false
+					//	std::cout << "Invalid click no piece at tile (" << col << "," << row << ")\n" << std::endl;
+					//}
 
 
 				}
@@ -168,6 +204,7 @@ int main()
 		}//end Blame
 
 
+	
 
 		window.clear();
 
