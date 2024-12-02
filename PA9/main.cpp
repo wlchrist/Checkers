@@ -53,7 +53,7 @@ int main()
 	{
 		for (int col = 0; col < 8; ++col)
 		{
-			if ((row + col) % 2 == 0)
+			if ((row + col) % 2 == 1)
 			{
 				board[row][col] = new Pawn(sf::Color::Red, col * 200, row * 200);
 			}
@@ -77,7 +77,7 @@ int main()
 			}
 			else
 			{
-				std::cout << "shits broke" << std::endl;
+				std::cout << "its broke" << std::endl;
 			}
 		}
 
@@ -108,7 +108,7 @@ int main()
 			{
 				window.close();
 			}
-			else if (event.type == sf::Event::KeyPressed && currentState == pieceMove)//deselectes piece with escape
+			else if (event.type == sf::Event::KeyPressed && currentState == pieceMove) //deselectes piece with escape
 			{
 				if (event.key.code == 36)
 				{
@@ -147,7 +147,7 @@ int main()
 						selectedCol = col;
 						selectedRow = row;
 						currentState = pieceMove;
-						std::cout << "Selected picece at: (" << col << "," << row << ")\n" << std::endl;
+						std::cout << "Selected piece at: (" << col << "," << row << ")\n" << std::endl;
 					}
 					else if (currentState == pieceMove && board[row][col] == nullptr)
 					{
@@ -170,11 +170,32 @@ int main()
 
 							std::cout << "moved piece to: (" << col << "," << row << ")\n" << std::endl;
 						}
-						else
-						{
+
+						// detecting if user can take a piece here - Warren
+						// seems like piece placement should be reworked so pieces can be taken
+						else if (rowDiff == abs(2) && colDiff == abs(2)) { // if there is a difference of 2 (absolute val) between your piece and the enemys piece
+							// we will de-render the piece being taken 
+
+
+							// piece movement, similar to the above
+							selectedPiece->setPosition(centerX + 1, centerY + 1);
+							board[row][col] = selectedPiece;
+							board[selectedRow][selectedCol] = nullptr;
+							board[selectedRow + 1][selectedCol + 1] = nullptr;
+							// state reset
+							selectedPiece = nullptr;
+							selectedCol = -1;
+							selectedRow = -1;
+							currentState = pieceSelection;
+							
+						}
+
+						else {
 							std::cout << "Invalid move! Diagonal moves only.\n";
 						}
 					}
+					
+
 					else if (currentState == pieceMove && board[row][col] != nullptr)
 					{
 						std::cout << "Cannot move here; tile (" << col << "," << row << ") is occupied.\n";
