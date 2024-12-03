@@ -1,1 +1,166 @@
-﻿  PA9.vcxproj -> \\Mac\Home\Documents\CS122\Checkers\x64\Debug\PA9.exe
+﻿  main.cpp
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(14,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(14,66): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(14,66): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(14,66): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(14,66): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(14,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(14,49): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(14,49): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(14,49): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(14,49): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(15,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(15,65): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(15,65): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(15,65): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(15,65): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(15,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(15,49): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(15,49): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(15,49): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(15,49): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(16,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(16,65): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(16,65): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(16,65): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(16,65): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(16,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(16,49): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(16,49): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(16,49): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(16,49): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(17,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(17,65): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(17,65): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(17,65): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(17,65): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(17,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(17,49): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(17,49): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(17,49): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(17,49): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(18,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(18,65): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(18,65): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(18,65): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(18,65): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(18,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(18,49): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(18,49): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(18,49): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(18,49): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(19,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(19,66): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(19,66): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(19,66): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(19,66): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(19,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(19,49): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(19,49): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(19,49): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(19,49): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(20,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(20,66): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(20,66): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(20,66): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(20,66): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(20,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(20,49): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(20,49): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(20,49): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(20,49): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(21,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(21,66): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(21,66): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(21,66): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(21,66): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(21,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(21,49): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(21,49): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(21,49): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(21,49): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(22,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(22,66): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(22,66): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(22,66): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(22,66): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(22,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(22,49): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(22,49): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(22,49): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(22,49): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(23,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(23,66): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(23,66): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(23,66): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(23,66): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(23,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(23,49): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(23,49): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(23,49): warning C4244:             T=float
+\\mac\Home\Documents\CS122\Checkers\PA9\King.h(23,49): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(135,22): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(135,22): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(135,22): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(135,22): warning C4244:             T=unsigned int
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(135,22): warning C4244:         ]
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(136,22): warning C4244: 'initializing': conversion from 'T' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(136,22): warning C4244:         with
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(136,22): warning C4244:         [
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(136,22): warning C4244:             T=unsigned int
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(136,22): warning C4244:         ]
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(138,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(139,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(167,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(167,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(190,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(190,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(230,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(230,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(239,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(239,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(248,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(248,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(257,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+\\mac\Home\Documents\CS122\Checkers\PA9\main.cpp(257,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  PA9.vcxproj -> \\Mac\Home\Documents\CS122\Checkers\x64\Debug\PA9.exe

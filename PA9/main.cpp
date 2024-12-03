@@ -268,6 +268,7 @@ int main()
 				if (board[row][col] != nullptr) // Check if a piece exists at this position
 				{
 					window.draw(board[row][col]->getShape()); // Draw the piece
+					window.draw(board[row][col]->getKingMarker()); // This function is called for all types of pieces, including pawns. A pawn will return an empty shape
 				}
 			}
 		}
