@@ -1,6 +1,5 @@
 #include "Piece.h"
 
-
 Piece::Piece(sf::Color newColor, int newXCoord, int newYCoord)
 {
 	Shape.setPosition(newXCoord, newYCoord);
@@ -32,7 +31,13 @@ sf::CircleShape Piece::getShape()
 	return Shape;
 }
 
-void Piece::setPosition(int x, int y)
+void Piece::selectPiece()
 {
-	Shape.setPosition(x, y);
+	Shape.setOutlineColor(sf::Color::Yellow);
+	Shape.setOutlineThickness(5);
+}
+
+void Piece::deselectPiece()
+{
+	Shape.setOutlineColor(sf::Color::Transparent);
 }

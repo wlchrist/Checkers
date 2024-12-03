@@ -23,9 +23,9 @@ int main()
 	gameState currentState = pieceSelection;
 
 
-	rect1.setFillColor(sf::Color::White);
+	rect1.setFillColor(sf::Color::Red);
 	rect2.setFillColor(sf::Color::Black);
-	P1.setFillColor(sf::Color::Blue);
+	P1.setFillColor(sf::Color::White);
 	P2.setFillColor(sf::Color::Red);//changed to p2 Noah
 
 	//gameState currentState = pieceSelection;//state machine initalization Noah
@@ -36,6 +36,9 @@ int main()
 	int selectedY = 0;
 	bool isPieceSelected = false;
 
+	int col = 0;
+	int row = 0;
+
 	// P1 piece placement
 	for (int row = 0; row < 2; ++row)
 	{
@@ -43,7 +46,7 @@ int main()
 		{
 			if ((row + col) % 2 == 1) // should skip every other row for P1
 			{
-				board[row][col] = new Pawn(sf::Color::Blue, col * 200, row * 200);
+				board[row][col] = new Pawn(sf::Color::White, col * 200, row * 200);
 			}
 		}
 	}
@@ -112,6 +115,7 @@ int main()
 			{
 				if (event.key.code == 36)
 				{
+					board[row][col]->deselectPiece();
 					selectedCol = -1;
 					selectedRow = -1;
 					currentState = pieceSelection;
@@ -131,8 +135,8 @@ int main()
 					float tileSizeX = window.getSize().x / BOARD_SIZE;//get current tile size y
 					float tileSizeY = window.getSize().y / BOARD_SIZE;//get current tile size x
 
-					int col = mouseX / tileSizeX;// divide X click coords by curent X tile size to accurelty get array coords
-					int row = mouseY / tileSizeY;// divide Y click coords by curent Y tile size to accurelty get array coords
+					col = mouseX / tileSizeX;// divide X click coords by curent X tile size to accurelty get array coords
+					row = mouseY / tileSizeY;// divide Y click coords by curent Y tile size to accurelty get array coords
 
 					float colAC = static_cast<float>(col);//1
 					float rowAC = static_cast<float>(row);//2
@@ -143,6 +147,9 @@ int main()
 					
 					if (currentState == pieceSelection && board[row][col] != NULL)
 					{
+						//Set piece as selected
+						board[row][col]->selectPiece();
+
 						selectedPiece = board[row][col];
 						selectedCol = col;
 						selectedRow = row;
@@ -157,16 +164,18 @@ int main()
 						if (rowDiff == 1 && colDiff == 1)
 						{
 							//piece movment
-							selectedPiece->setPosition(centerX, centerY);//controls visual repersentation
+							selectedPiece->setPosition(centerX-50, centerY-50);//controls visual repersentation
 							board[row][col] = selectedPiece;
 							board[selectedRow][selectedCol] = nullptr;
 
-
+							
 							//state reset
 							selectedPiece = nullptr;
 							selectedCol = -1;
 							selectedRow = -1;
 							currentState = pieceSelection;
+
+							board[row][col]->deselectPiece();
 
 							std::cout << "moved piece to: (" << col << "," << row << ")\n" << std::endl;
 						}
@@ -178,7 +187,7 @@ int main()
 
 
 							// piece movement, similar to the above
-							selectedPiece->setPosition(centerX + 1, centerY + 1);
+							selectedPiece->setPosition(centerX -50, centerY -50);
 							board[row][col] = selectedPiece;
 							board[selectedRow][selectedCol] = nullptr;
 							board[selectedRow + 1][selectedCol + 1] = nullptr;
@@ -188,6 +197,7 @@ int main()
 							selectedRow = -1;
 							currentState = pieceSelection;
 							
+							board[row][col]->deselectPiece();
 						}
 
 						else {
@@ -200,23 +210,6 @@ int main()
 					{
 						std::cout << "Cannot move here; tile (" << col << "," << row << ") is occupied.\n";
 					}
-
-
-
-
-
-					//this code is funcional
-
-					//if (board[row][col] != nullptr)//checks if point has a piece
-					//{//true
-					//	std::cout << "Mouse is at: (" << col << "," << row << ")\n" << std::endl;
-					//}
-					//else if (board[row][col] == nullptr)
-					//{//false
-					//	std::cout << "Invalid click no piece at tile (" << col << "," << row << ")\n" << std::endl;
-					//}
-
-
 				}
 
 			}
@@ -266,7 +259,7 @@ int main()
 			}
 		}
 
-		//This loop renders the pieces on thw dinow
+		//This loop renders the pieces in the window
 		// Piece rendering using the above 2 piece instantiation loops
 		for (int row = 0; row < 8; ++row)
 		{
@@ -278,55 +271,6 @@ int main()
 				}
 			}
 		}
-		//these two blocks are actually hadling the rendering but may be hard coded -Noah
-
-		//// Player 1 Chips
-		//for (int coordx = 200; coordx < 1600; coordx = coordx + 400)
-		//{
-		//	P1.setPosition(coordx, 0);
-		//	window.draw(P1);
-		//}
-		//for (int coordx = 0; coordx < 1600; coordx = coordx + 400)
-		//{
-		//	P1.setPosition(coordx, 200);
-		//	window.draw(P1);
-		//}
-		//for (int coordx = 200; coordx < 1600; coordx = coordx + 400)
-		//{
-		//	P1.setPosition(coordx, 400);
-		//	window.draw(P1);
-		//}
-
-
-		//// Player 2 Chips
-		//for (int coordx = 0; coordx < 1600; coordx = coordx + 400)
-		//{
-		//	P2.setPosition(coordx, 1400);
-		//	window.draw(P2);
-		//}
-		//for (int coordx = 200; coordx < 1600; coordx = coordx + 400)
-		//{
-		//	P2.setPosition(coordx, 1200);
-		//	window.draw(P2);
-		//}
-		//for (int coordx = 0; coordx < 1600; coordx = coordx + 400)
-		//{
-		//	P2.setPosition(coordx, 1000);
-		//	window.draw(P2);
-		//}
-
-
-
-		//leave commented out for now constant board deletion prevents player actions from being read -Noah
-
-		/*for (int row = 0; row < 8; ++row)
-		{
-			for (int col = 0; col < 8; ++col)
-			{
-				delete board[row][col];
-				board[row][col] = nullptr;
-			}
-		}*/
 
 		window.display();
 	}
