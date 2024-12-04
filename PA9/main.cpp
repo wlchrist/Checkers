@@ -4,6 +4,7 @@
 #include "King.h"
 #include "StateMachine.h"
 #include "Rules.h"
+#include "GameOverComponent.h"
 
 void main()
 {
@@ -17,11 +18,12 @@ void main()
 
 	//updated by WARREN 12/3/2024 added feature which handles piece-taking, added feature which promotes pawn to king, added feature which checks for win.
 	
-	
+	//updated by WARREN 12/4/2024 fixed an issue where game-over was not working
 	
 	// Variables, instantiation, etc.
 
 	// Rendering
+	
 	sf::RenderWindow window(sf::VideoMode(1600, 1600), "Checkers");
 	sf::RectangleShape rect1(sf::Vector2f(200.f, 200.f));
 	sf::RectangleShape rect2(sf::Vector2f(200.f, 200.f));
@@ -44,7 +46,7 @@ void main()
 	int col = 0;
 	int row = 0;
 
-	sf::Color currentPlayer = sf::Color::White; // for turn management, white should go first
+	sf::Color currentPlayer = sf::Color::White; // white should go first
 
 
 
@@ -141,6 +143,7 @@ void main()
 						if (!isValidTurn(board[row][col], currentPlayer)) {
 							if (currentPlayer == sf::Color::White) {
 								std::cout << "White must move\n";
+
 							}
 							else {
 								std::cout << "Red must move\n";
@@ -198,6 +201,7 @@ void main()
 								// TODO: render an overlay with the player which won
 								if (didWin(board, board[row][col]->getColor())) {
 									std::cout << "Game Over\n";
+									gameOver();
 
 								}
 
@@ -212,14 +216,27 @@ void main()
 
 								std::cout << "moved piece to: (" << col << "," << row << ")\n" << std::endl;
 
+
+
+
 								// now switch turns
 								if (currentPlayer == sf::Color::White) {
 									currentPlayer = sf::Color::Red;
 									std::cout << "Turn switched to Red\n";
+									if (didWin(board, board[row][col]->getColor())) {
+										std::cout << "Game Over\n";
+										gameOver();
+
+									}
 								}
 								else {
 									currentPlayer = sf::Color::White;
 									std::cout << "Turn switched to White\n";
+									if (didWin(board, board[row][col]->getColor())) {
+										std::cout << "Game Over\n";
+										gameOver();
+
+									}
 								}
 							}
 						}
@@ -251,10 +268,18 @@ void main()
 								if (currentPlayer == sf::Color::White) {
 									currentPlayer = sf::Color::Red;
 									std::cout << "Turn switched to Red\n";
+									if (didWin(board, board[row][col]->getColor())) {
+										std::cout << "Game Over\n";
+										gameOver();
+									}
 								}
 								else {
 									currentPlayer = sf::Color::White;
 									std::cout << "Turn switched to White\n";
+									if (didWin(board, board[row][col]->getColor())) {
+										std::cout << "Game Over\n";
+										gameOver();
+									}
 								}
 							}
 
