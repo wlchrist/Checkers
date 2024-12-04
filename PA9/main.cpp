@@ -1,17 +1,24 @@
+#include <iostream>
 #include "SFML\Graphics.hpp"
 #include "Pawn.h"
 #include "King.h"
-#include <iostream>
-#include "stateMachine.h"
+#include "StateMachine.h"
+#include "Rules.h"
 
 int main()
 {
-	//updated by NOAH 11/28/2024 just a version verifier feel free to overwrite if you change anything im just parinoid about pulling and old version lol
+	//updated by NOAH 11/28/2024 just a version verifier feel free to overwrite if you change anything im just parinoid about pulling and old version
 
 	//updataed by BEN 11/30/2024 added subclasses for pawn and king pieces. Also fixed rendering pieces to the board after memory for creating pieces was allocated. 
 
-	//updated by NOAH 12/1/2024 finished piece movemnet logic attmepted to fix issue with piece rendering , added escape clause to deselect pieces.
+	//updated by NOAH 12/1/2024 finished piece movement logic attmepted to fix issue with piece rendering , added escape clause to deselect pieces.
 
+	//updated by BEN 12/2/2024 resolved issue where pieces were not aligned with squares on board
+
+	//updated by WARREN 12/3/2024 added feature which handles piece-taking, added feature which promotes pawn to king, added feature which checks for win.
+	
+	
+	
 	// Variables, instantiation, etc.
 
 	// Rendering
@@ -23,12 +30,10 @@ int main()
 	gameState currentState = pieceSelection;
 
 
-	rect1.setFillColor(sf::Color::Red);
+	rect1.setFillColor(sf::Color::White);
 	rect2.setFillColor(sf::Color::Black);
 	P1.setFillColor(sf::Color::White);
 	P2.setFillColor(sf::Color::Red);//changed to p2 Noah
-
-	//gameState currentState = pieceSelection;//state machine initalization Noah
 
 	// Pieces
 	Piece* board[8][8] = { nullptr }; // board instantiation, not to be confused with rendering
@@ -63,44 +68,21 @@ int main()
 		}
 	}
 
-	//can be removed in post just tests piece loactions -Noah
-	for (int i = 0; i < 8; i++)
-	{
-		for (int j = 0; j < 8; j++)
-		{
-			if (board[i][j] == nullptr)
-			{
-				//std::cout << "no piece here (" << i << "," << j << ")\n" << std::endl;
 
-
-			}
-			else if (board[i][j] != nullptr)
-			{
-				std::cout << "piece here (" << i << "," << j << ")\n" << std::endl;
-			}
-			else
-			{
-				std::cout << "its broke" << std::endl;
-			}
-		}
-
-	}
 
 
 	Piece* selectedPiece = nullptr;
 	int selectedRow = -1, selectedCol = -1;
 
-	// Event loop (while (window.pollEvent(event)) loop) is fundamental to the entire game logic
+	// Event loop (while (window.pollEvent(event)) loop) is FUNDAMENTAL to the entire game logic
 	// Checks for user events, when an event is registered
-	// For example, checking if a key press has registered
+	// (For example, checking if a key press has registered)
 	while (window.isOpen())
 	{
-		//Blame Noah 
 		const int BOARD_SIZE = 8;
 		int mouseX = 0;
 		int mouseY = 0;
 		float rad = P1.getRadius();
-		//end Blame
 		sf::Event event;
 
 	
@@ -111,7 +93,7 @@ int main()
 			{
 				window.close();
 			}
-			else if (event.type == sf::Event::KeyPressed && currentState == pieceMove) //deselectes piece with escape
+			else if (event.type == sf::Event::KeyPressed && currentState == pieceMove) // Deselects piece with escape
 			{
 				if (event.key.code == 36)
 				{
@@ -123,31 +105,31 @@ int main()
 				}
 
 			}
-			else if (event.type == sf::Event::MouseButtonPressed)//Blame Noah 
+			else if (event.type == sf::Event::MouseButtonPressed)
 			{
-				if (event.mouseButton.button == sf::Mouse::Left)//checks for left click
+				if (event.mouseButton.button == sf::Mouse::Left)// checks for left click
 				{
-					sf::Vector2i mousePosition = sf::Mouse::getPosition(window);//gets mouse postition in vector form
+					sf::Vector2i mousePosition = sf::Mouse::getPosition(window);// gets mouse postition in vector form
 
-					mouseX = mousePosition.x;//sets x mouse coord
-					mouseY = mousePosition.y;//sets y mouse coord
+					mouseX = mousePosition.x;// sets x mouse coord
+					mouseY = mousePosition.y;// sets y mouse coord
 
-					float tileSizeX = window.getSize().x / BOARD_SIZE;//get current tile size y
-					float tileSizeY = window.getSize().y / BOARD_SIZE;//get current tile size x
+					float tileSizeX = window.getSize().x / BOARD_SIZE;// get current tile size y
+					float tileSizeY = window.getSize().y / BOARD_SIZE;// get current tile size x
 
 					col = mouseX / tileSizeX;// divide X click coords by curent X tile size to accurelty get array coords
 					row = mouseY / tileSizeY;// divide Y click coords by curent Y tile size to accurelty get array coords
 
-					float colAC = static_cast<float>(col);//1
-					float rowAC = static_cast<float>(row);//2
+					float colAC = static_cast<float>(col);
+					float rowAC = static_cast<float>(row);
 					
-					float centerX = colAC * tileSizeX + (tileSizeX - rad) / 2;//3
-					float centerY = rowAC * tileSizeY + (tileSizeY - rad) / 2;//4
-					//1-4 are attempts to constrain piece placment for more accurate visuals
+					float centerX = colAC * tileSizeX + (tileSizeX - rad) / 2;
+					float centerY = rowAC * tileSizeY + (tileSizeY - rad) / 2;
+					// 1-4 are attempts to constrain piece placment for more accurate visuals
 					
 					if (currentState == pieceSelection && board[row][col] != NULL)
 					{
-						//Set piece as selected
+						// Set piece as selected
 						board[row][col]->selectPiece();
 
 						selectedPiece = board[row][col];
@@ -163,13 +145,33 @@ int main()
 
 						if (rowDiff == 1 && colDiff == 1)
 						{
-							//piece movment
-							selectedPiece->setPosition(centerX-50, centerY-50);//controls visual repersentation
+							// piece movement
+							selectedPiece->setPosition(centerX-50, centerY-50); // controls visual repersentation
 							board[row][col] = selectedPiece;
 							board[selectedRow][selectedCol] = nullptr;
+							// We want to continuously check if king promotion is possible
+							if ((selectedPiece->getColor() == sf::Color::White && row == 7) || (selectedPiece->getColor() == sf::Color::Red && row == 0))
+							{
+								// King piece creation here
+								King* kingPiece = new King(selectedPiece->getColor(), centerX
+									- 50, centerY - 50);
 
+								// replacing pawn with king
+								delete board[row][col];
+								board[row][col] = kingPiece;
+
+							}
 							
-							//state reset
+
+							// Check for win conditions
+							// TODO: render an overlay with the player which won
+							if (didWin(board, board[row][col]->getColor())) {
+								std::cout << "Game Over\n";
+
+							}
+
+
+							// state reset
 							selectedPiece = nullptr;
 							selectedCol = -1;
 							selectedRow = -1;
@@ -180,34 +182,47 @@ int main()
 							std::cout << "moved piece to: (" << col << "," << row << ")\n" << std::endl;
 						}
 
-						// detecting if user can take a piece here - Warren
-						// seems like piece placement should be reworked so pieces can be taken
-						else if (rowDiff == abs(2) && colDiff == abs(2)) { // if there is a difference of 2 (absolute val) between your piece and the enemys piece
-							// we will de-render the piece being taken 
+						// Piece-taking
+						else if (rowDiff == 2 && colDiff == 2) {
+							int capturedRow = selectedRow + (row - selectedRow) / 2;
+							int capturedCol = selectedCol + (col - selectedCol) / 2;
+
+							if (board[capturedRow][capturedCol] != nullptr &&
+								board[capturedRow][capturedCol]->getColor() != selectedPiece->getColor()) {
+
+								selectedPiece->setPosition(centerX - 50, centerY - 50);
+								board[row][col] = selectedPiece;
+								board[selectedRow][selectedCol] = nullptr;
+								delete board[capturedRow][capturedCol];
+								board[capturedRow][capturedCol] = nullptr;
+
+								selectedPiece = nullptr;
+								selectedCol = -1;
+								selectedRow = -1;
+								currentState = pieceSelection;
+
+								board[row][col]->deselectPiece();
+
+								std::cout << "Captured piece at (" << capturedRow << "," << capturedCol << ")\n";
+							}
 
 
-							// piece movement, similar to the above
-							selectedPiece->setPosition(centerX -50, centerY -50);
-							board[row][col] = selectedPiece;
-							board[selectedRow][selectedCol] = nullptr;
-							board[selectedRow + 1][selectedCol + 1] = nullptr;
-							// state reset
-							selectedPiece = nullptr;
-							selectedCol = -1;
-							selectedRow = -1;
-							currentState = pieceSelection;
-							
-							board[row][col]->deselectPiece();
+							else {
+								std::cout << "Cannot capture piece here\n";
+							}
 						}
 
 						else {
-							std::cout << "Invalid move! Diagonal moves only.\n";
+							std::cout << "Make sure to only move diagonally\n";
 						}
 					}
 					
+					
+
 
 					else if (currentState == pieceMove && board[row][col] != nullptr)
 					{
+
 						std::cout << "Cannot move here; tile (" << col << "," << row << ") is occupied.\n";
 					}
 				}
@@ -215,7 +230,7 @@ int main()
 			}
 
 
-		}//end Blame
+		}
 
 
 	
@@ -259,7 +274,7 @@ int main()
 			}
 		}
 
-		//This loop renders the pieces in the window
+		// This loop renders the pieces in the window
 		// Piece rendering using the above 2 piece instantiation loops
 		for (int row = 0; row < 8; ++row)
 		{

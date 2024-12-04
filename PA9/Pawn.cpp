@@ -1,8 +1,5 @@
 #include "Pawn.h"
 
-//Pawn::~Pawn()
-//{
-//}
 
 void Pawn::setPosition(int x, int y)
 {
