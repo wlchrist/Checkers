@@ -1,13 +1,11 @@
 #pragma once
+#include "SFML/Graphics.hpp"
 #include "Piece.h"
 
 // Header file for helper functions pertaining to the rules of the game
 
-// Helper function for checking if player has won
+// Checking if player has won
 bool didWin(Piece* board[8][8], sf::Color playerColor) {
-
-
-
 
 	sf::Color enemyColor = (playerColor == sf::Color::White) ? sf::Color::Red : sf::Color::White;
 	bool enemyHasPieces = false;
@@ -56,4 +54,15 @@ bool didWin(Piece* board[8][8], sf::Color playerColor) {
 
 	return enemyHasPieces == false || enemyCanMove == false;
 
+}
+
+// Turn management
+bool isValidTurn(Piece* piece, sf::Color currentPlayer) {
+	if (piece == nullptr) {
+		return false;
+	}
+	if (piece->getColor() == currentPlayer) {
+		return true;
+	}
+	return false;
 }

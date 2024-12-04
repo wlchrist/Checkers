@@ -5,7 +5,7 @@
 #include "StateMachine.h"
 #include "Rules.h"
 
-int main()
+void main()
 {
 	//updated by NOAH 11/28/2024 just a version verifier feel free to overwrite if you change anything im just parinoid about pulling and old version
 
@@ -43,6 +43,10 @@ int main()
 
 	int col = 0;
 	int row = 0;
+
+	sf::Color currentPlayer = sf::Color::White; // for turn management, white should go first
+
+
 
 	// P1 piece placement
 	for (int row = 0; row < 2; ++row)
@@ -127,16 +131,31 @@ int main()
 					float centerY = rowAC * tileSizeY + (tileSizeY - rad) / 2;
 					// 1-4 are attempts to constrain piece placment for more accurate visuals
 					
+
+					// Piece selection code block
 					if (currentState == pieceSelection && board[row][col] != NULL)
 					{
-						// Set piece as selected
-						board[row][col]->selectPiece();
 
-						selectedPiece = board[row][col];
-						selectedCol = col;
-						selectedRow = row;
-						currentState = pieceMove;
-						std::cout << "Selected piece at: (" << col << "," << row << ")\n" << std::endl;
+						// Validates if whose turn it is using function from Rules.h
+						if (!isValidTurn(board[row][col], currentPlayer)) {
+							if (currentPlayer == sf::Color::White) {
+								std::cout << "White must move\n";
+							}
+							else {
+								std::cout << "Red must move\n";
+							}
+							
+						}
+						else {
+							// Set piece as selected
+							board[row][col]->selectPiece();
+
+							selectedPiece = board[row][col];
+							selectedCol = col;
+							selectedRow = row;
+							currentState = pieceMove;
+							std::cout << "Selected piece at: (" << col << "," << row << ")\n" << std::endl;
+						}
 					}
 					else if (currentState == pieceMove && board[row][col] == nullptr)
 					{
@@ -145,41 +164,63 @@ int main()
 
 						if (rowDiff == 1 && colDiff == 1)
 						{
-							// piece movement
-							selectedPiece->setPosition(centerX-50, centerY-50); // controls visual repersentation
-							board[row][col] = selectedPiece;
-							board[selectedRow][selectedCol] = nullptr;
-							// We want to continuously check if king promotion is possible
-							if ((selectedPiece->getColor() == sf::Color::White && row == 7) || (selectedPiece->getColor() == sf::Color::Red && row == 0))
-							{
-								// King piece creation here
-								King* kingPiece = new King(selectedPiece->getColor(), centerX
-									- 50, centerY - 50);
 
-								// replacing pawn with king
-								delete board[row][col];
-								board[row][col] = kingPiece;
 
+							// validating move direction for pawns here
+							if (selectedPiece->getColor() == sf::Color::White && row < selectedRow) {
+								std::cout << "White can only move down\n";
 							}
-							
-
-							// Check for win conditions
-							// TODO: render an overlay with the player which won
-							if (didWin(board, board[row][col]->getColor())) {
-								std::cout << "Game Over\n";
-
+							else if (selectedPiece->getColor() == sf::Color::Red && row > selectedRow) {
+								std::cout << "Red can only move up\n";
 							}
+							else {
+
+								// piece movement
+								selectedPiece->setPosition(centerX - 50, centerY - 50); // controls visual repersentation
+								board[row][col] = selectedPiece;
+								board[selectedRow][selectedCol] = nullptr;
+								// We want to continuously check if king promotion is possible
+								if ((selectedPiece->getColor() == sf::Color::White && row == 7) || (selectedPiece->getColor() == sf::Color::Red && row == 0))
+								{
+									// King piece creation here
+									King* kingPiece = new King(selectedPiece->getColor(), centerX
+										- 50, centerY - 50);
+
+									// replacing pawn with king
+									delete board[row][col];
+									board[row][col] = kingPiece;
+
+								}
 
 
-							// state reset
-							selectedPiece = nullptr;
-							selectedCol = -1;
-							selectedRow = -1;
-							currentState = pieceSelection;
+								// Check for win conditions
+								// TODO: render an overlay with the player which won
+								if (didWin(board, board[row][col]->getColor())) {
+									std::cout << "Game Over\n";
 
-							board[row][col]->deselectPiece();
+								}
 
-							std::cout << "moved piece to: (" << col << "," << row << ")\n" << std::endl;
+
+								// state reset
+								selectedPiece = nullptr;
+								selectedCol = -1;
+								selectedRow = -1;
+								currentState = pieceSelection;
+
+								board[row][col]->deselectPiece();
+
+								std::cout << "moved piece to: (" << col << "," << row << ")\n" << std::endl;
+
+								// now switch turns
+								if (currentPlayer == sf::Color::White) {
+									currentPlayer = sf::Color::Red;
+									std::cout << "Turn switched to Red\n";
+								}
+								else {
+									currentPlayer = sf::Color::White;
+									std::cout << "Turn switched to White\n";
+								}
+							}
 						}
 
 						// Piece-taking
@@ -204,6 +245,16 @@ int main()
 								board[row][col]->deselectPiece();
 
 								std::cout << "Captured piece at (" << capturedRow << "," << capturedCol << ")\n";
+
+								// now switch turns
+								if (currentPlayer == sf::Color::White) {
+									currentPlayer = sf::Color::Red;
+									std::cout << "Turn switched to Red\n";
+								}
+								else {
+									currentPlayer = sf::Color::White;
+									std::cout << "Turn switched to White\n";
+								}
 							}
 
 
@@ -291,5 +342,5 @@ int main()
 		window.display();
 	}
 
-	return 0;
+	return;
 }
