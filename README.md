@@ -1,16 +1,15 @@
-
 # Checkers
+### Description
+A checkers game built in SFML, using C/C++. To play, run the .exe file contained within /PA9.
 
-**Description:**
-A checkers game built in SFML, using C/C++
+###### Project Information
+- Lab Section: 4
+- Course: CPT_S 122
+- Semester: Fall 2024
 
-CPT_S122
-Fall 2024
-Washington State University
-Lab section 04
+###### Contributors
+- Noah Booth
+- Wyatt Bush
+- Warren Christian
+- Benjamin Gibson
 
-
-Noah Booth
-Wyatt Bush
-Warren Christian
-Benjamin Gibson
