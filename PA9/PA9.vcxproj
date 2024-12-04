@@ -137,7 +137,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Piece.cpp" />
-    <ClCompile Include="RunPrgm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="King.h" />

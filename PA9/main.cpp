@@ -101,11 +101,12 @@ void main()
 			{
 				if (event.key.code == 36)
 				{
-					board[row][col]->deselectPiece();
+					
 					selectedCol = -1;
 					selectedRow = -1;
 					currentState = pieceSelection;
 					std::cout << "Piece deselected.\n";
+					selectedPiece->deselectPiece();
 				}
 
 			}
