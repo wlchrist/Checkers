@@ -9,6 +9,8 @@ protected:
 public:
 	King(sf::Color newColor, int newXCoord = 0, int newYCoord = 0) : Piece(newColor, newXCoord, newYCoord)
 	{
+		pieceType = "king";
+
 		KingMarker.setFillColor(sf::Color::Yellow);
 		KingMarker.setPointCount(10);
 		KingMarker.setPoint(0, sf::Vector2f(newXCoord + 100, newYCoord + 30));

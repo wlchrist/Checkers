@@ -23,6 +23,8 @@ void main()
 	// Variables, instantiation, etc.
 
 	// Rendering
+
+
 	
 	sf::RenderWindow window(sf::VideoMode(1600, 1600), "Checkers");
 	sf::RectangleShape rect1(sf::Vector2f(200.f, 200.f));
@@ -134,7 +136,7 @@ void main()
 					float centerY = rowAC * tileSizeY + (tileSizeY - rad) / 2;
 					// 1-4 are attempts to constrain piece placment for more accurate visuals
 					
-
+					
 					// Piece selection code block
 					if (currentState == pieceSelection && board[row][col] != NULL)
 					{
@@ -161,137 +163,579 @@ void main()
 							std::cout << "Selected piece at: (" << col << "," << row << ")\n" << std::endl;
 						}
 					}
-					else if (currentState == pieceMove && board[row][col] == nullptr)
+					else if (currentState == pieceMove && board[row][col] == nullptr /*tile they selected to move to is empty*/)
 					{
 						int rowDiff = abs(row - selectedRow);
 						int colDiff = abs(col - selectedCol);
 
-						if (rowDiff == 1 && colDiff == 1)
+						//which player is moving. Red or white?
+						if (selectedPiece->getColor() == sf::Color::Red)
 						{
+							//red
+							//king or pawn?
+							if (selectedPiece->getPieceType() == "king")
+							{
+								//king piece is moving
+								cout << selectedPiece->getPieceType() << endl;
 
+								//player is allowed to move in any direction
 
-							// validating move direction for pawns here
-							if (selectedPiece->getColor() == sf::Color::White && row < selectedRow) {
-								std::cout << "White can only move down\n";
-							}
-							else if (selectedPiece->getColor() == sf::Color::Red && row > selectedRow) {
-								std::cout << "Red can only move up\n";
-							}
-							else {
-
-								// piece movement
-								selectedPiece->setPosition(centerX - 50, centerY - 50); // controls visual repersentation
-								board[row][col] = selectedPiece;
-								board[selectedRow][selectedCol] = nullptr;
-								// We want to continuously check if king promotion is possible
-								if ((selectedPiece->getColor() == sf::Color::White && row == 7) || (selectedPiece->getColor() == sf::Color::Red && row == 0))
+								//are they moving one tile or tryin to capture a piece
+								if (rowDiff == 1 && colDiff == 1)
 								{
-									// King piece creation here
-									King* kingPiece = new King(selectedPiece->getColor(), centerX
-										- 50, centerY - 50);
+									//moving by one tile
+									//king can move in any diagonal direction
+									selectedPiece->setPosition(centerX - 50, centerY - 50); // controls visual repersentation
+									board[row][col] = selectedPiece;
+									board[selectedRow][selectedCol] = nullptr;
 
-									// replacing pawn with king
-									delete board[row][col];
-									board[row][col] = kingPiece;
-
-								}
-
-
-								// Check for win conditions
-								// TODO: render an overlay with the player which won
-								if (didWin(board, board[row][col]->getColor())) {
-									std::cout << "Game Over\n";
-									gameOver();
-
-								}
-
-
-								// state reset
-								selectedPiece = nullptr;
-								selectedCol = -1;
-								selectedRow = -1;
-								currentState = pieceSelection;
-
-								board[row][col]->deselectPiece();
-
-								std::cout << "moved piece to: (" << col << "," << row << ")\n" << std::endl;
-
-
-
-
-								// now switch turns
-								if (currentPlayer == sf::Color::White) {
-									currentPlayer = sf::Color::Red;
-									std::cout << "Turn switched to Red\n";
-									if (didWin(board, board[row][col]->getColor())) {
+									// Check for win conditions
+										// TODO: render an overlay with the player which won
+									if (didWin(board, selectedPiece->getColor())) {
 										std::cout << "Game Over\n";
 										gameOver();
-
 									}
-								}
-								else {
+
+									//state reset
+									selectedPiece->deselectPiece();
+									selectedPiece = nullptr;
+									selectedCol = -1;
+									selectedRow = -1;
+									currentState = pieceSelection;
+
+									// now switch turns
 									currentPlayer = sf::Color::White;
 									std::cout << "Turn switched to White\n";
-									if (didWin(board, board[row][col]->getColor())) {
-										std::cout << "Game Over\n";
-										gameOver();
 
+								}
+								else if (rowDiff == 2 && colDiff == 2)
+								{
+									//trying to capture a piece
+									int capturedRow = selectedRow + (row - selectedRow) / 2;
+									int capturedCol = selectedCol + (col - selectedCol) / 2;
+
+									//is the tile that the piece they are trying to capture valid for capture? is there a piece? is it from the opposing side?
+									if (board[capturedRow][capturedCol] != nullptr &&
+										board[capturedRow][capturedCol]->getColor() != selectedPiece->getColor()) {
+
+										selectedPiece->setPosition(centerX - 50, centerY - 50);
+										board[row][col] = selectedPiece;
+										board[selectedRow][selectedCol] = nullptr;
+										delete board[capturedRow][capturedCol];
+										board[capturedRow][capturedCol] = nullptr;
+
+										// Check for win conditions
+										// TODO: render an overlay with the player which won
+										if (didWin(board, selectedPiece->getColor())) {
+											std::cout << "Game Over\n";
+											gameOver();
+										}
+
+										//state reset
+										selectedPiece->deselectPiece();
+										selectedPiece = nullptr;
+										selectedCol = -1;
+										selectedRow = -1;
+										currentState = pieceSelection;
+
+										
+
+										std::cout << "Captured piece at (" << capturedRow << "," << capturedCol << ")\n";
+
+										
+
+										// now switch turns
+										currentPlayer = sf::Color::White;
+										std::cout << "Turn switched to White\n";
+										
+									}
+									else
+									{
+										std::cout << "Cannot capture piece here\n";
+									}
+								}
+								else if (rowDiff != colDiff)
+								{
+									std::cout << "Make sure to only move diagonally\n";
+								}
+								else
+								{
+									cout << "you cannot move that far\n";
+								}
+							}
+							else
+							{
+								//pawn is moving
+								cout << selectedPiece->getPieceType() << endl;
+
+								//is the direction they are moving viable for the player?
+								//Red: they can only move foward
+								if (row > selectedRow)
+								{
+									std::cout << "Red can only move up\n";
+								}
+								else
+								{
+									//they are moving up
+									if (rowDiff == 1 && colDiff == 1)
+									{
+										// piece movement
+										selectedPiece->setPosition(centerX - 50, centerY - 50); // controls visual repersentation
+										board[row][col] = selectedPiece;
+										board[selectedRow][selectedCol] = nullptr;
+										// We want to continuously check if king promotion is possible
+										if (row == 0)
+										{
+											// King piece creation here
+											King* kingPiece = new King(selectedPiece->getColor(), centerX
+												- 50, centerY - 50);
+
+											// replacing pawn with king
+											delete board[row][col];
+											board[row][col] = kingPiece;
+
+										}
+
+										// Check for win conditions
+										// TODO: render an overlay with the player which won
+										if (didWin(board, selectedPiece->getColor())) {
+											std::cout << "Game Over\n";
+											gameOver();
+										}
+
+										// state reset
+										selectedPiece->deselectPiece();
+										selectedPiece = nullptr;
+										selectedCol = -1;
+										selectedRow = -1;
+										currentState = pieceSelection;
+
+										std::cout << "moved piece to: (" << col << "," << row << ")\n" << std::endl;
+
+										// now switch turns
+										currentPlayer = sf::Color::White;
+										std::cout << "Turn switched to White\n";
+										
+										
+									}
+									else if (rowDiff == 2 && colDiff == 2)
+									{
+										//trying to capture a piece
+										int capturedRow = selectedRow + (row - selectedRow) / 2;
+										int capturedCol = selectedCol + (col - selectedCol) / 2;
+
+										//is the tile that the piece they are trying to capture valid for capture? is there a piece? is it from the opposing side?
+										if (board[capturedRow][capturedCol] != nullptr &&
+											board[capturedRow][capturedCol]->getColor() != selectedPiece->getColor()) {
+
+											selectedPiece->setPosition(centerX - 50, centerY - 50);
+											board[row][col] = selectedPiece;
+											board[selectedRow][selectedCol] = nullptr;
+											delete board[capturedRow][capturedCol];
+											board[capturedRow][capturedCol] = nullptr;
+
+											// We want to continuously check if king promotion is possible
+											if (row == 0)
+											{
+												// King piece creation here
+												King* kingPiece = new King(selectedPiece->getColor(), centerX
+													- 50, centerY - 50);
+
+												// replacing pawn with king
+												delete board[row][col];
+												board[row][col] = kingPiece;
+
+											}
+
+											// Check for win conditions
+										// TODO: render an overlay with the player which won
+											if (didWin(board, selectedPiece->getColor())) {
+												std::cout << "Game Over\n";
+												gameOver();
+											}
+
+											//state reset
+											selectedPiece->deselectPiece();
+											selectedPiece = nullptr;
+											selectedCol = -1;
+											selectedRow = -1;
+											currentState = pieceSelection;
+
+											
+
+											std::cout << "Captured piece at (" << capturedRow << "," << capturedCol << ")\n";
+
+											// now switch turns
+											currentPlayer = sf::Color::White;
+											std::cout << "Turn switched to White\n";
+										}
+										else
+										{
+											std::cout << "Cannot capture piece here\n";
+										}
+
+									}
+									else if (rowDiff != colDiff)
+									{
+										std::cout << "Make sure to only move diagonally\n";
+									}
+									else
+									{
+										cout << "you cannot move that far\n";
 									}
 								}
 							}
 						}
+						else if (selectedPiece->getColor() == sf::Color::White)
+						{
+							//red
+							//king or pawn?
+							if (selectedPiece->getPieceType() == "king")
+							{
+								//king piece is moving
+								cout << selectedPiece->getPieceType() << endl;
 
-						// Piece-taking
-						else if (rowDiff == 2 && colDiff == 2) {
-							int capturedRow = selectedRow + (row - selectedRow) / 2;
-							int capturedCol = selectedCol + (col - selectedCol) / 2;
+								//player is allowed to move in any direction
 
-							if (board[capturedRow][capturedCol] != nullptr &&
-								board[capturedRow][capturedCol]->getColor() != selectedPiece->getColor()) {
+								//are they moving one tile or tryin to capture a piece
+								if (rowDiff == 1 && colDiff == 1)
+								{
+									//moving by one tile
+									//king can move in any diagonal direction
+									selectedPiece->setPosition(centerX - 50, centerY - 50); // controls visual repersentation
+									board[row][col] = selectedPiece;
+									board[selectedRow][selectedCol] = nullptr;
 
-								selectedPiece->setPosition(centerX - 50, centerY - 50);
-								board[row][col] = selectedPiece;
-								board[selectedRow][selectedCol] = nullptr;
-								delete board[capturedRow][capturedCol];
-								board[capturedRow][capturedCol] = nullptr;
+									// Check for win conditions
+										// TODO: render an overlay with the player which won
+									if (didWin(board, selectedPiece->getColor())) {
+										std::cout << "Game Over\n";
+										gameOver();
+									}
 
-								selectedPiece = nullptr;
-								selectedCol = -1;
-								selectedRow = -1;
-								currentState = pieceSelection;
+									//state reset
+									selectedPiece->deselectPiece();
+									selectedPiece = nullptr;
+									selectedCol = -1;
+									selectedRow = -1;
+									currentState = pieceSelection;
 
-								board[row][col]->deselectPiece();
-
-								std::cout << "Captured piece at (" << capturedRow << "," << capturedCol << ")\n";
-
-								// now switch turns
-								if (currentPlayer == sf::Color::White) {
+									// now switch turns
 									currentPlayer = sf::Color::Red;
 									std::cout << "Turn switched to Red\n";
-									if (didWin(board, board[row][col]->getColor())) {
-										std::cout << "Game Over\n";
-										gameOver();
+
+								}
+								else if (rowDiff == 2 && colDiff == 2)
+								{
+									//trying to capture a piece
+									int capturedRow = selectedRow + (row - selectedRow) / 2;
+									int capturedCol = selectedCol + (col - selectedCol) / 2;
+
+									//is the tile that the piece they are trying to capture valid for capture? is there a piece? is it from the opposing side?
+									if (board[capturedRow][capturedCol] != nullptr &&
+										board[capturedRow][capturedCol]->getColor() != selectedPiece->getColor()) {
+
+										selectedPiece->setPosition(centerX - 50, centerY - 50);
+										board[row][col] = selectedPiece;
+										board[selectedRow][selectedCol] = nullptr;
+										delete board[capturedRow][capturedCol];
+										board[capturedRow][capturedCol] = nullptr;
+
+										// Check for win conditions
+										// TODO: render an overlay with the player which won
+										if (didWin(board, selectedPiece->getColor())) {
+											std::cout << "Game Over\n";
+											gameOver();
+										}
+
+										//state reset
+										selectedPiece->deselectPiece();
+										selectedPiece = nullptr;
+										selectedCol = -1;
+										selectedRow = -1;
+										currentState = pieceSelection;
+
+
+
+										std::cout << "Captured piece at (" << capturedRow << "," << capturedCol << ")\n";
+
+										// now switch turns
+										currentPlayer = sf::Color::Red;
+										std::cout << "Turn switched to Red\n";
+
+									}
+									else
+									{
+										std::cout << "Cannot capture piece here\n";
 									}
 								}
-								else {
-									currentPlayer = sf::Color::White;
-									std::cout << "Turn switched to White\n";
-									if (didWin(board, board[row][col]->getColor())) {
-										std::cout << "Game Over\n";
-										gameOver();
+								else if (rowDiff != colDiff)
+								{
+									std::cout << "Make sure to only move diagonally\n";
+								}
+								else
+								{
+									cout << "you cannot move that far\n";
+								}
+							}
+							else
+							{
+								//pawn is moving
+								cout << selectedPiece->getPieceType() << endl;
+
+								//is the direction they are moving viable for the player?
+								//White: can only move down
+								if (row < selectedRow)
+								{
+									std::cout << "White can only move up\n";
+								}
+								else
+								{
+									//they are moving up
+									if (rowDiff == 1 && colDiff == 1)
+									{
+										// piece movement
+										selectedPiece->setPosition(centerX - 50, centerY - 50); // controls visual repersentation
+										board[row][col] = selectedPiece;
+										board[selectedRow][selectedCol] = nullptr;
+										// We want to continuously check if king promotion is possible
+										if (row == 7)
+										{
+											// King piece creation here
+											King* kingPiece = new King(selectedPiece->getColor(), centerX
+												- 50, centerY - 50);
+
+											// replacing pawn with king
+											delete board[row][col];
+											board[row][col] = kingPiece;
+
+										}
+
+										// Check for win conditions
+										// TODO: render an overlay with the player which won
+										if (didWin(board, selectedPiece->getColor())) {
+											std::cout << "Game Over\n";
+											gameOver();
+										}
+
+										// state reset
+										selectedPiece->deselectPiece();
+										selectedPiece = nullptr;
+										selectedCol = -1;
+										selectedRow = -1;
+										currentState = pieceSelection;
+
+										std::cout << "moved piece to: (" << col << "," << row << ")\n" << std::endl;
+
+										// now switch turns
+										currentPlayer = sf::Color::Red;
+										std::cout << "Turn switched to Red\n";
+
+
+									}
+									else if (rowDiff == 2 && colDiff == 2)
+									{
+										//trying to capture a piece
+										int capturedRow = selectedRow + (row - selectedRow) / 2;
+										int capturedCol = selectedCol + (col - selectedCol) / 2;
+
+										//is the tile that the piece they are trying to capture valid for capture? is there a piece? is it from the opposing side?
+										if (board[capturedRow][capturedCol] != nullptr &&
+											board[capturedRow][capturedCol]->getColor() != selectedPiece->getColor()) {
+
+											selectedPiece->setPosition(centerX - 50, centerY - 50);
+											board[row][col] = selectedPiece;
+											board[selectedRow][selectedCol] = nullptr;
+											delete board[capturedRow][capturedCol];
+											board[capturedRow][capturedCol] = nullptr;
+
+											// We want to continuously check if king promotion is possible
+											if (row == 7)
+											{
+												// King piece creation here
+												King* kingPiece = new King(selectedPiece->getColor(), centerX
+													- 50, centerY - 50);
+
+												// replacing pawn with king
+												delete board[row][col];
+												board[row][col] = kingPiece;
+
+											}
+
+											// Check for win conditions
+											// TODO: render an overlay with the player which won
+											if (didWin(board, selectedPiece->getColor())) {
+												std::cout << "Game Over\n";
+												gameOver(); 
+											}
+
+											//state reset
+											selectedPiece->deselectPiece();
+											selectedPiece = nullptr;
+											selectedCol = -1;
+											selectedRow = -1;
+											currentState = pieceSelection;
+
+
+
+											std::cout << "Captured piece at (" << capturedRow << "," << capturedCol << ")\n";
+
+											// now switch turns
+											currentPlayer = sf::Color::Red;
+											std::cout << "Turn switched to Red\n";
+										}
+										else
+										{
+											std::cout << "Cannot capture piece here\n";
+										}
+
+									}
+									else if (rowDiff != colDiff)
+									{
+										std::cout << "Make sure to only move diagonally\n";
+									}
+									else
+									{
+										cout << "you cannot move that far\n";
 									}
 								}
 							}
-
-
-							else {
-								std::cout << "Cannot capture piece here\n";
-							}
 						}
 
-						else {
-							std::cout << "Make sure to only move diagonally\n";
-						}
+						/*if (didWin(board, board[row][col]->getColor())) {
+							std::cout << "Game Over\n";
+							gameOver();
+						}*/
+
+
+
+
+						
+
+						//if (rowDiff == 1 && colDiff == 1)
+						//{
+						//	
+
+						//	// validating move direction for pawns here
+						//	if (selectedPiece->getColor() == sf::Color::White && row < selectedRow) {
+						//		std::cout << "White can only move down\n";
+						//	}
+						//	else if (selectedPiece->getColor() == sf::Color::Red && row > selectedRow) {
+						//		std::cout << "Red can only move up\n";
+						//	}
+						//	else {
+
+						//		// piece movement
+						//		selectedPiece->setPosition(centerX - 50, centerY - 50); // controls visual repersentation
+						//		board[row][col] = selectedPiece;
+						//		board[selectedRow][selectedCol] = nullptr;
+						//		// We want to continuously check if king promotion is possible
+						//		if ((selectedPiece->getColor() == sf::Color::White && row == 7) || (selectedPiece->getColor() == sf::Color::Red && row == 0))
+						//		{
+						//			// King piece creation here
+						//			King* kingPiece = new King(selectedPiece->getColor(), centerX
+						//				- 50, centerY - 50);
+
+						//			// replacing pawn with king
+						//			delete board[row][col];
+						//			board[row][col] = kingPiece;
+
+						//		}
+
+						//		// Check for win conditions
+						//		// TODO: render an overlay with the player which won
+						//		if (didWin(board, board[row][col]->getColor())) {
+						//			std::cout << "Game Over\n";
+						//			gameOver();
+
+						//		}
+
+						//		// state reset
+						//		selectedPiece = nullptr;
+						//		selectedCol = -1;
+						//		selectedRow = -1;
+						//		currentState = pieceSelection;
+
+						//		board[row][col]->deselectPiece();
+
+						//		std::cout << "moved piece to: (" << col << "," << row << ")\n" << std::endl;
+
+
+
+
+						//		// now switch turns
+						//		if (currentPlayer == sf::Color::White) {
+						//			currentPlayer = sf::Color::Red;
+						//			std::cout << "Turn switched to Red\n";
+						//			if (didWin(board, board[row][col]->getColor())) {
+						//				std::cout << "Game Over\n";
+						//				gameOver();
+
+						//			}
+						//		}
+						//		else {
+						//			currentPlayer = sf::Color::White;
+						//			std::cout << "Turn switched to White\n";
+						//			if (didWin(board, board[row][col]->getColor())) {
+						//				std::cout << "Game Over\n";
+						//				gameOver();
+
+						//			}
+						//		}
+						//	}
+						//}
+
+						//// Piece-taking
+						//else if (rowDiff == 2 && colDiff == 2) {
+						//	int capturedRow = selectedRow + (row - selectedRow) / 2;
+						//	int capturedCol = selectedCol + (col - selectedCol) / 2;
+
+						//	if (board[capturedRow][capturedCol] != nullptr &&
+						//		board[capturedRow][capturedCol]->getColor() != selectedPiece->getColor()) {
+
+						//		selectedPiece->setPosition(centerX - 50, centerY - 50);
+						//		board[row][col] = selectedPiece;
+						//		board[selectedRow][selectedCol] = nullptr;
+						//		delete board[capturedRow][capturedCol];
+						//		board[capturedRow][capturedCol] = nullptr;
+
+						//		selectedPiece = nullptr;
+						//		selectedCol = -1;
+						//		selectedRow = -1;
+						//		currentState = pieceSelection;
+
+						//		board[row][col]->deselectPiece();
+
+						//		std::cout << "Captured piece at (" << capturedRow << "," << capturedCol << ")\n";
+
+						//		// now switch turns
+						//		if (currentPlayer == sf::Color::White) {
+						//			currentPlayer = sf::Color::Red;
+						//			std::cout << "Turn switched to Red\n";
+						//			if (didWin(board, board[row][col]->getColor())) {
+						//				std::cout << "Game Over\n";
+						//				gameOver();
+						//			}
+						//		}
+						//		else {
+						//			currentPlayer = sf::Color::White;
+						//			std::cout << "Turn switched to White\n";
+						//			if (didWin(board, board[row][col]->getColor())) {
+						//				std::cout << "Game Over\n";
+						//				gameOver();
+						//			}
+						//		}
+						//	}
+
+
+						//	else {
+						//		std::cout << "Cannot capture piece here\n";
+						//	}
+						//}
+
+						//else {
+						//	std::cout << "Make sure to only move diagonally\n";
+						//}
 					}
 					
 					

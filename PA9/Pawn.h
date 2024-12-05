@@ -5,7 +5,10 @@
 class Pawn : public Piece
 {
 public:
-	Pawn(sf::Color newColor, int newXCoord = 0, int newYCoord = 0) : Piece(newColor, newXCoord, newYCoord) {}
+	Pawn(sf::Color newColor, int newXCoord = 0, int newYCoord = 0) : Piece(newColor, newXCoord, newYCoord) 
+	{
+		pieceType = "pawn";
+	}
 	/*~Pawn();*/
 
 	void setPosition(int x, int y);

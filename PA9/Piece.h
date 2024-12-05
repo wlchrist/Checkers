@@ -4,11 +4,17 @@
 #include <SFML/Window/Mouse.hpp>
 #include <iostream>
 
+using std::cout;
+using std::cin;
+using std::endl;
+using std::string;
+
 /// class for each individual game piece
 class Piece
 {
 protected:
 	sf::CircleShape Shape; // includes color of piece, size & position in the window
+	std::string pieceType;
 public:
 	Piece(sf::Color newColor, int newXCoord = 0, int newYCoord = 0); // constructor
 	virtual ~Piece(); //destructor
@@ -23,4 +29,6 @@ public:
 
 	void selectPiece(); //sets an outline around the piece - color yellow. This indicates that a piece has been selected to move on the board
 	void deselectPiece(); //removes outline
+
+	std::string getPieceType();
 };

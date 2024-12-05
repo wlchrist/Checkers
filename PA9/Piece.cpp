@@ -41,3 +41,8 @@ void Piece::deselectPiece()
 {
 	Shape.setOutlineColor(sf::Color::Transparent);
 }
+
+std::string Piece::getPieceType()
+{
+	return pieceType;
+}
