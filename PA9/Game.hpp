@@ -4,6 +4,8 @@
 #include "StateMachine.h"
 #include "Rules.h"
 #include "GameOverComponent.h"
+#include "Server.h"
+#include "Client.h"
 
 class Game
 {
