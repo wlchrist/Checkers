@@ -1,9 +1,8 @@
 #pragma once
-#pragma once
 #include "SFML/Graphics.hpp"
 #include <iostream>
 
-void gameOver() {
+inline void gameOver() {
     sf::Text gameOver;
     sf::Font gameOverFont;
     sf::RenderWindow window(sf::VideoMode(1600, 1600), "Game Over");
@@ -32,6 +31,4 @@ void gameOver() {
         window.draw(gameOver);
         window.display();
     }
-
-    
 }

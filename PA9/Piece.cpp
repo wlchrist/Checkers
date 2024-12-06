@@ -1,3 +1,4 @@
+#pragma once
 #include "Piece.h"
 
 Piece::Piece(sf::Color newColor, int newXCoord, int newYCoord)

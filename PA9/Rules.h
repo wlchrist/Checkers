@@ -5,7 +5,7 @@
 // Header file for helper functions pertaining to the rules of the game
 
 // Checking if player has won
-bool didWin(Piece* board[8][8], sf::Color playerColor) {
+inline bool didWin(Piece* board[8][8], sf::Color playerColor) {
 
 	sf::Color enemyColor = (playerColor == sf::Color::White) ? sf::Color::Red : sf::Color::White;
 	bool enemyHasPieces = false;
@@ -57,7 +57,7 @@ bool didWin(Piece* board[8][8], sf::Color playerColor) {
 }
 
 // Turn management
-bool isValidTurn(Piece* piece, sf::Color currentPlayer) {
+inline bool isValidTurn(Piece* piece, sf::Color currentPlayer) {
 	if (piece == nullptr) {
 		return false;
 	}

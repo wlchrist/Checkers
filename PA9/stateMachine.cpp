@@ -1,4 +1,4 @@
-
+#pragma once
 #include "Piece.h"
 #include "stateMachine.h"
 
