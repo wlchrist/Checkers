@@ -19,7 +19,7 @@ Game::Game() //ignore this warning. We can't "initialize" 'event'
 		for (int col = 0; col < 8; ++col)
 		{
 
-			if ((row + col) % 2 == 1) // should skip every other row for P1
+			if ((row + col) % 2 == 1)
 			{
 				board[row][col] = new Pawn(sf::Color::White, col * 200, row * 200);
 			}
