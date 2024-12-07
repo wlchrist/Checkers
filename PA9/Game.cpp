@@ -2,7 +2,7 @@
 
 Game::Game() //ignore this warning. We can't "initialize" 'event'
 {
-	window.create(sf::VideoMode(1600, 1600), "Checkers");
+	window.create(sf::VideoMode(1600, 1600), "Checkers", sf::Style::Close);
 	currentState = pieceSelection;
 
 	//first initialize all cells in the board to nullptrs. 
