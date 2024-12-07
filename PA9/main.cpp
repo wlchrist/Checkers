@@ -3,24 +3,20 @@
 
 int main()
 {
-    std::cout << "(s)erver or (c)lient or (l)ocal?\n";
+    std::cout << "Press (1) to run game locally\nPress (2) to host a server (Extra Credit)\nPress (3) to start a networked client instance (Extra Credit)\n";
     std::string serverOrClient;
-    std::getline(std::cin >> std::ws, serverOrClient); // remove whitespace, pass into menu handling below
-
-    if (serverOrClient == "c") {
+    std::getline(std::cin >> std::ws, serverOrClient);
+    if (serverOrClient == "3") {
+        Server server;
+        server.run();
+    }
+    else if (serverOrClient == "2") {
         sf::IpAddress ip = sf::IpAddress::LocalHost;
         unsigned short port = 54000;
         Client client(ip, port);
         client.runClient();
-
-        //Game game;
-        //game.runGame();
     }
-    else if (serverOrClient == "s") {
-        Server server;
-        server.run();
-    }
-    else if(serverOrClient == "l") {
+    else if(serverOrClient == "1") {
         Game game;
         game.runGame();
     }

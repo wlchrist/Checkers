@@ -1,5 +1,6 @@
 #pragma once
 #include "Server.h"
+#include "Game.hpp"
 
 Server::Server() {
 
@@ -66,6 +67,7 @@ void Server::run() {
                         std::string message;
                         receivePacket >> message;
                         std::cout << "Server received message and broadcasted: " << message << "\n";
+                        std::string msg = message;
                     }
                 }
             }
