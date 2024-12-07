@@ -16,7 +16,23 @@ int main()
         Client client(ip, port);
         client.runClient();
     }
-    else if(serverOrClient == "1") {
+    else if (serverOrClient == "1") {
+        testCases test;
+        test.checkGameOver();
+        test.checkMovement();
+        test.checkValidCord();
+        test.checkKing();
+        test.checkTurnOrder();
+        std::cout << "all tests complete" << endl;
+        Sleep(1200);
+        std::cout << "3" << endl;
+        Sleep(1200);
+        std::cout << "2" << endl;
+        Sleep(1200);
+        std::cout << "1" << endl;
+        system("cls");
+
+
         Game game;
         game.runGame();
     }
@@ -26,5 +42,5 @@ int main()
         game.runGame();
     }
 
-	return 0;
+    return 0;
 }

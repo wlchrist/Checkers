@@ -2,7 +2,7 @@
 
 Game::Game() 
 {
-	window.create(sf::VideoMode(1600, 1600), "Checkers");
+	window.create(sf::VideoMode(1600, 1600), "Checkers", sf::Style::Close);
 	currentState = pieceSelection;
 
 	for (int x = 0; x < 8; ++x)
@@ -253,7 +253,15 @@ void Game::movePiece(int rowDiff, int colDiff, Piece*& selectedPiece, float cent
 					// TODO: render an overlay with the player which won
 				if (didWin(board, selectedPiece->getColor())) {
 					cout << "Game Over\n";
-					gameOver();
+
+					window.clear();
+
+					renderBoard();
+					renderPieces();
+
+					window.display();
+
+					gameOver(selectedPiece->getColor());
 				}
 
 				//state reset
@@ -285,10 +293,17 @@ void Game::movePiece(int rowDiff, int colDiff, Piece*& selectedPiece, float cent
 					board[capturedRow][capturedCol] = nullptr;
 
 					// Check for win conditions
-					// TODO: render an overlay with the player which won
 					if (didWin(board, selectedPiece->getColor())) {
 						cout << "Game Over\n";
-						gameOver();
+
+						window.clear();
+
+						renderBoard();
+						renderPieces();
+
+						window.display();
+
+						gameOver(selectedPiece->getColor());
 					}
 
 					//state reset
@@ -352,10 +367,17 @@ void Game::movePiece(int rowDiff, int colDiff, Piece*& selectedPiece, float cent
 					}
 
 					// Check for win conditions
-					// TODO: render an overlay with the player which won
 					if (didWin(board, selectedPiece->getColor())) {
 						cout << "Game Over\n";
-						gameOver();
+
+						window.clear();
+
+						renderBoard();
+						renderPieces();
+
+						window.display();
+
+						gameOver(selectedPiece->getColor());
 					}
 
 					// state reset
@@ -403,10 +425,17 @@ void Game::movePiece(int rowDiff, int colDiff, Piece*& selectedPiece, float cent
 						}
 
 						// Check for win conditions
-					// TODO: render an overlay with the player which won
 						if (didWin(board, selectedPiece->getColor())) {
 							cout << "Game Over\n";
-							gameOver();
+
+							window.clear();
+
+							renderBoard();
+							renderPieces();
+
+							window.display();
+
+							gameOver(selectedPiece->getColor());
 						}
 
 						//state reset
@@ -464,10 +493,17 @@ void Game::movePiece(int rowDiff, int colDiff, Piece*& selectedPiece, float cent
 				board[selectedRow][selectedCol] = nullptr;
 
 				// Check for win conditions
-					// TODO: render an overlay with the player which won
 				if (didWin(board, selectedPiece->getColor())) {
 					cout << "Game Over\n";
-					gameOver();
+
+					window.clear();
+
+					renderBoard();
+					renderPieces();
+
+					window.display();
+
+					gameOver(selectedPiece->getColor());
 				}
 
 				//state reset
@@ -499,10 +535,17 @@ void Game::movePiece(int rowDiff, int colDiff, Piece*& selectedPiece, float cent
 					board[capturedRow][capturedCol] = nullptr;
 
 					// Check for win conditions
-					// TODO: render an overlay with the player which won
 					if (didWin(board, selectedPiece->getColor())) {
 						cout << "Game Over\n";
-						gameOver();
+
+						window.clear();
+
+						renderBoard();
+						renderPieces();
+
+						window.display();
+
+						gameOver(selectedPiece->getColor());
 					}
 
 					//state reset
@@ -570,10 +613,17 @@ void Game::movePiece(int rowDiff, int colDiff, Piece*& selectedPiece, float cent
 					}
 
 					// Check for win conditions
-					// TODO: render an overlay with the player which won
 					if (didWin(board, selectedPiece->getColor())) {
 						cout << "Game Over\n";
-						gameOver();
+
+						window.clear();
+
+						renderBoard();
+						renderPieces();
+
+						window.display();
+
+						gameOver(selectedPiece->getColor());
 					}
 
 					// state reset
@@ -621,10 +671,17 @@ void Game::movePiece(int rowDiff, int colDiff, Piece*& selectedPiece, float cent
 						}
 
 						// Check for win conditions
-						// TODO: render an overlay with the player which won
 						if (didWin(board, selectedPiece->getColor())) {
 							cout << "Game Over\n";
-							gameOver();
+
+							window.clear();
+
+							renderBoard();
+							renderPieces();
+
+							window.display();
+
+							gameOver(selectedPiece->getColor());
 						}
 
 						//state reset

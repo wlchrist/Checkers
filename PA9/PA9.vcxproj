@@ -141,6 +141,7 @@
     <ClCompile Include="Server.cpp" />
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Piece.cpp" />
+    <ClCompile Include="testCases.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h" />
@@ -153,6 +154,7 @@
     <ClInclude Include="Rules.h" />
     <ClInclude Include="Server.h" />
     <ClInclude Include="StateMachine.h" />
+    <ClInclude Include="testCases.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
