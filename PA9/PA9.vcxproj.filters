@@ -30,6 +30,9 @@
     <ClCompile Include="Game.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="testCases.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pawn.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testCases.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
