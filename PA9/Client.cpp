@@ -31,6 +31,7 @@ void Client::send(Player* p) {
     sf::Packet packet;
     packet << p->getID();
     if (connection.send(packet) != sf::Socket::Done) {
+        std::cout << "Failed to send packet\n";
     }
 }
 

@@ -1,11 +1,10 @@
 #include "Game.hpp"
 
-Game::Game() //ignore this warning. We can't "initialize" 'event'
+Game::Game() 
 {
 	window.create(sf::VideoMode(1600, 1600), "Checkers");
 	currentState = pieceSelection;
 
-	//first initialize all cells in the board to nullptrs. 
 	for (int x = 0; x < 8; ++x)
 	{
 		for (int y = 0; y < 8; y++)
@@ -13,6 +12,7 @@ Game::Game() //ignore this warning. We can't "initialize" 'event'
 			board[y][x] = nullptr;
 		}
 	}
+
 	// P1 piece placement
 	for (int row = 0; row < 2; ++row)
 	{

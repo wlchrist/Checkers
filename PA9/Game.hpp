@@ -17,10 +17,11 @@ private:
 
 public:
 	Game();
+
 	~Game();
-
+	void initializeBoard();
 	void runGame(); //runs the game
-
+	std::string getBoardState();
 	void renderBoard();
 	void renderPieces();
 

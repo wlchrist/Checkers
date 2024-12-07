@@ -24,11 +24,14 @@ void Server::run() {
                 std::unique_ptr<sf::TcpSocket> newClient = std::make_unique<sf::TcpSocket>();
 
                 if (m_listener.accept(*newClient) == sf::Socket::Done) {
+
+
+
                     if (m_playerNum >= m_maxPlayerNum) {
                         sf::Packet fullPacket;
                         fullPacket << 2 << 0;
                         newClient->send(fullPacket);
-                        std::cout << "Sorry, the server is full\n";
+                        std::cout << "server is full\n";
                         return;
                     }
 
@@ -39,8 +42,8 @@ void Server::run() {
                     m_selector.add(*newClient);
                     clients.push_back(std::move(newClient));
                     m_playerNum++;
-                    std::cout << "New player connected. ID: " << m_currentID
-                        << " Count: " << m_playerNum << "\n";
+                    std::cout << "New player connected WITH ID: " << m_currentID
+                        << " player count: " << m_playerNum << "\n";
                     m_currentID++;
                 }
             }
@@ -49,7 +52,11 @@ void Server::run() {
                 if (m_selector.isReady(*client)) {
                     sf::Packet receivePacket;
                     if (client->receive(receivePacket) == sf::Socket::Done) {
-                        // Broadcast to others
+
+                        // currently not broadcasting to all clients when received
+                        // messages are only received AFTER client sends a message
+                        // in other words, messages are received out of order
+                        // obviously, this should not happen
                         for (auto& other : clients) {
                             if (other != client) {
                                 other->send(receivePacket);
@@ -58,7 +65,7 @@ void Server::run() {
 
                         std::string message;
                         receivePacket >> message;
-                        std::cout << "Server received and broadcasted: " << message << "\n";
+                        std::cout << "Server received message and broadcasted: " << message << "\n";
                     }
                 }
             }
@@ -66,15 +73,3 @@ void Server::run() {
     }
 }
 
-void Server::sendPacket(sf::Packet& packet, unsigned int skip)
-{
-    for (unsigned int i = 0; i < m_playerList.size(); ++i)
-    {
-        if (skip == i)
-            continue;
-        if (m_playerList[i].getSocket()->send(packet) != sf::Socket::Done)
-        {
-            std::cout << "Error sending packet in sendPacket func" << std::endl;
-        }
-    }
-}
