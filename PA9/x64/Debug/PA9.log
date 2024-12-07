@@ -1,18 +1,27 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿  Server.cpp
 =======
 ﻿  testCases.cpp
 >>>>>>> main
+=======
+﻿  Client.cpp
+  Game.cpp
+>>>>>>> parent of 9219bf2 (commit)
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244:         with
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244:         [
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,49): warning C4244:         with
@@ -20,10 +29,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,49): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,49): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,49): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,65): warning C4244:         with
@@ -31,10 +44,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,65): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,65): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,65): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,49): warning C4244:         with
@@ -42,10 +59,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,49): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,49): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,49): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,65): warning C4244:         with
@@ -53,10 +74,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,65): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,65): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,65): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,49): warning C4244:         with
@@ -64,10 +89,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,49): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,49): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,49): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,65): warning C4244:         with
@@ -75,10 +104,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,65): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,65): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,65): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,49): warning C4244:         with
@@ -86,10 +119,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,49): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,49): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,49): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,65): warning C4244:         with
@@ -97,10 +134,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,65): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,65): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,65): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,49): warning C4244:         with
@@ -108,10 +149,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,49): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,49): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,49): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,66): warning C4244:         with
@@ -119,10 +164,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,66): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,66): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,66): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,49): warning C4244:         with
@@ -130,10 +179,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,49): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,49): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,49): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,66): warning C4244:         with
@@ -141,10 +194,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,66): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,66): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,66): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,49): warning C4244:         with
@@ -152,10 +209,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,49): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,49): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,49): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,66): warning C4244:         with
@@ -163,10 +224,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,66): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,66): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,66): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,49): warning C4244:         with
@@ -174,10 +239,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,49): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,49): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,49): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,66): warning C4244:         with
@@ -185,10 +254,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,66): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,66): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,66): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,49): warning C4244:         with
@@ -196,10 +269,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,49): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,49): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,49): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,66): warning C4244:         with
@@ -207,10 +284,14 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,66): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,66): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,66): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
 =======
   (compiling source file 'testCases.cpp')
 >>>>>>> main
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,49): warning C4244:         with
@@ -218,8 +299,194 @@ C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,49): warni
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,49): warning C4244:             T=float
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,49): warning C4244:         ]
 <<<<<<< HEAD
+<<<<<<< HEAD
   (compiling source file 'Server.cpp')
+=======
+  (compiling source file 'Client.cpp')
+>>>>>>> parent of 9219bf2 (commit)
   
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,49): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,49): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,49): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,49): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,65): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,65): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,65): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,65): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,49): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,49): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,49): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(17,49): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,65): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,65): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,65): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,65): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,49): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,49): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,49): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(18,49): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,65): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,65): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,65): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,65): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,49): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,49): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,49): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(19,49): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,65): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,65): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,65): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,65): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,65): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,49): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,49): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,49): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(20,49): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,66): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,66): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,66): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,66): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,49): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,49): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,49): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(21,49): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,66): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,66): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,66): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,66): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,49): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,49): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,49): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(22,49): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,66): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,66): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,66): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,66): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,49): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,49): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,49): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(23,49): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,66): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,66): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,66): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,66): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,49): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,49): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,49): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(24,49): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,66): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,66): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,66): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,66): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,49): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,49): warning C4244:         with
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,49): warning C4244:         [
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,49): warning C4244:             T=float
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(25,49): warning C4244:         ]
+  (compiling source file 'Game.cpp')
+  
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(58,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(58,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(67,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(67,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(76,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(76,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(85,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(85,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(171,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(172,18): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(174,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(175,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(180,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(181,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(248,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(248,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(281,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(281,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(338,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(338,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(346,22): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(346,8): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(386,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(386,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(397,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(397,9): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(462,54): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(462,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(495,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(495,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(556,55): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(556,41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(564,22): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(564,8): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(604,56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(604,42): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(615,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Game.cpp(615,9): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  Pawn.cpp
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Pawn.cpp(6,23): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\Pawn.cpp(6,20): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Server.cpp
   main.cpp
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\warrenchristian\source\repos\wlchrist\Checkers\PA9\King.h(16,66): warning C4244:         with

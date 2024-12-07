@@ -3,19 +3,20 @@
 
 int main()
 {
-    std::cout << "Press (1) to run game locally\nPress (2) to host a server (Extra Credit)\nPress (3) to start a networked client instance (Extra Credit)\n";
+    std::cout << "(s)erver or (c)lient or (l)ocal?\n";
     std::string serverOrClient;
-    std::getline(std::cin >> std::ws, serverOrClient);
-    if (serverOrClient == "3") {
-        Server server;
-        server.run();
-    }
-    else if (serverOrClient == "2") {
+    std::getline(std::cin >> std::ws, serverOrClient); // remove whitespace, pass into menu handling below
+
+    if (serverOrClient == "c") {
         sf::IpAddress ip = sf::IpAddress::LocalHost;
         unsigned short port = 54000;
         Client client(ip, port);
         client.runClient();
+
+        //Game game;
+        //game.runGame();
     }
+<<<<<<< HEAD
     else if (serverOrClient == "1") {
         testCases test;
         test.checkGameOver();
@@ -33,6 +34,13 @@ int main()
         system("cls");
 
 
+=======
+    else if (serverOrClient == "s") {
+        Server server;
+        server.run();
+    }
+    else if(serverOrClient == "l") {
+>>>>>>> parent of 9219bf2 (commit)
         Game game;
         game.runGame();
     }
